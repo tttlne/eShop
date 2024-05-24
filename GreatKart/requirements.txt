@@ -1,0 +1,5 @@
+Django==3.2
+pipenv
+environ
+django-environ
+mysqlclient
