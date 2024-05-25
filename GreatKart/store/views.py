@@ -90,3 +90,10 @@ def submit_review(request, product_id):
                 data.save()
                 messages.success(request, "Thank you! Your review has been submitted.")
                 return redirect(url)
+
+def product_list(request):
+    products = Product.objects.all()
+    paginator = Paginator(products, 10)  # 10 sản phẩm mỗi trang
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+    return render(request, 'store/product_list.html', {'page_obj': page_obj})

@@ -1,0 +1,9 @@
+{% extends "store/store.html" %}
+
+{% block content %}
+    <h2>Search Results</h2>
+    {% for product in products %}
+        <div>{{ product.name }}</div>
+        <div>{{ product.description }}</div>
+    {% endfor %}
+{% endblock %}
